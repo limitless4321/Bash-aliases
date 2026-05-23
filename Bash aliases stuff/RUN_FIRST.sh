@@ -25,5 +25,6 @@ fi
 sudo chmod --recursive 777 /keyboardmapthing/
 source .bashrc
 sleep 0.5
-
+printf "\e[0;32mRun 'lscmds' to view available commands.$TERM_COLOR\n"
+sleep 2
 sudo rm RUN_FIRST.sh
