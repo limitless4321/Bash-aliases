@@ -110,7 +110,7 @@ lscmd() {
        (speaker-test -t sine -f 800 -l 1 > /dev/null 2>&1 & PID=$!; sleep 0.1; kill $PID) 2>/dev/null
        printf "\e[0;32mlscmd: lists custom commands.$TERM_COLOR\n\n"
        printf "\e[0;32mmroms: mounts or unmounts the EASYROMS partition.$TERM_COLOR\n\n"
-       printf "\e[0;32mbt: outputs battery percentage and wether to charge or not.$TERM_COLOR\n\n"
+       printf "\e[0;32mbt: outputs battery percentage and whether to charge or not.$TERM_COLOR\n\n"
        printf "\e[0;32mmche: mounts the cheese partition.$TERM_COLOR\n\n"
        printf "\e[0;32muche: unmounts the cheese partition.$TERM_COLOR\n\n"
        printf "\e[0;32mnba: Executes 'nano ~/.bash_aliases'.$TERM_COLOR\n\n"
