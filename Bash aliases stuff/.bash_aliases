@@ -74,12 +74,31 @@ bt() {
         (speaker-test -t sine -f 800 -l 1 > /dev/null 2>&1 & PID=$!; sleep 0.2; kill $PID) 2>/dev/null
     fi
 }
+
 mche() {
-      sudo mount -o loop /cheese.img /cheese
+    if mountpoint -q /cheese; then
+        printf "\e[1;31mCheese is already mounted, please run 'uche'.$TERM_COLOR\n"
+    else
+        if sudo mount -o loop /cheese.img /cheese 2>/dev/null; then
+            printf "\e[0;32mCheese is now mounted! To unmount, run 'uche'$TERM_COLOR\n"
+        else
+            printf "\e[1;31mCheese could not be mounted.$TERM_COLOR\n"
+        fi
+    fi
 }
+
 uche() {
-      sudo umount /cheese
+    if mountpoint -q /cheese; then
+        if sudo umount /cheese 2>/dev/null; then
+            printf "\e[0;32mCheese is now unmounted!$TERM_COLOR\n"
+        else
+            printf "\e[1;31mCheese could not be unmounted.$TERM_COLOR\n"
+        fi
+    else
+        printf "\e[1;31mCheese is not mounted, please run 'mche'.$TERM_COLOR\n"
+    fi
 }
+
 nba() {
      nano ~/.bash_aliases
 }
