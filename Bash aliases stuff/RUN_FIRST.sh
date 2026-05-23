@@ -1,5 +1,5 @@
 #!/bin/bash
-mv .bash_aliases ~/
+sudo mv .bash_aliases ~/
 # Create /cheese directory if missing
 sudo mkdir -p /cheese
 
@@ -10,6 +10,10 @@ if [ ! -f /cheese.img ]; then
 
     # Format it as FAT16
     sudo mkfs.vfat -F 16 /cheese.img
+    # first mount / unmount
+    sleep 0.3
+    sudo mount -o loop /cheese.img /cheese
+    sudo umount /cheese
 fi
 
 sudo mkdir -p /keyboardmapthing
@@ -22,4 +26,4 @@ sudo chmod --recursive 777 /keyboardmapthing/
 source .bashrc
 sleep 0.5
 
-rm RUN_FIRST.sh
+sudo rm RUN_FIRST.sh
