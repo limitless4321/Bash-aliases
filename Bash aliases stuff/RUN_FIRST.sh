@@ -1,3 +1,4 @@
+#!/bin/bash
 mv .bash_aliases ~/
 # Create /cheese directory if missing
 sudo mkdir -p /cheese
