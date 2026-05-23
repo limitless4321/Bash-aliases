@@ -16,3 +16,6 @@ if [ ! -f /keyboardmapthing/us-gb.txt ]; then
     echo "us" | sudo tee /keyboardmapthing/us-gb.txt > /dev/null
 fi
 
+sudo chmod --recursive 777 /keyboardmapthing/
+
+rm */RUN_FIRST.sh
