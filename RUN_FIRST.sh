@@ -1,3 +1,4 @@
+mv .bash_aliases ~/
 # Create /cheese directory if missing
 sudo mkdir -p /cheese
 
@@ -17,5 +18,7 @@ if [ ! -f /keyboardmapthing/us-gb.txt ]; then
 fi
 
 sudo chmod --recursive 777 /keyboardmapthing/
+source .bashrc
+sleep 0.5
 
-rm */RUN_FIRST.sh
+rm RUN_FIRST.sh
