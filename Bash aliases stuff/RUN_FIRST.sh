@@ -1,18 +1,19 @@
 #!/bin/bash
 sudo mv .bash_aliases ~/
-# Create /cheese directory if missing
+# Create /cheese directory because why not 
 sudo mkdir -p /cheese
 
-# Create cheese.img if missing
+# Create cheese.img because again, why not lol
 if [ ! -f /cheese.img ]; then
     # Make a 5MB empty file
     sudo dd if=/dev/zero of=/cheese.img bs=1M count=5
 
-    # Format it as FAT16
+    # Format it as FAT16 (5M)
     sudo mkfs.vfat -F 16 /cheese.img
     # first mount / unmount
     sleep 0.3
     sudo mount -o loop /cheese.img /cheese
+    sleep 0.5
     sudo umount /cheese
 fi
 
