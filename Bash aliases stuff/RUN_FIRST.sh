@@ -24,7 +24,7 @@ if [ ! -f /keyboardmapthing/us-gb.txt ]; then
 fi
 
 sudo chmod --recursive 777 /keyboardmapthing/
-source .bashrc
+#source .bashrc
 sleep 0.5
 printf "\e[0;32mRun 'source ~/.bashrc' first, and then Run 'lscmd' to view available commands.$TERM_COLOR\n"
 sleep 2
