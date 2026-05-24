@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo mv .bash_aliases ~/
+mv .bash_aliases ~/
 # Create /cheese directory because why not 
 sudo mkdir -p /cheese
 
@@ -9,7 +9,7 @@ if [ ! -f /cheese.img ]; then
     sudo dd if=/dev/zero of=/cheese.img bs=1M count=5
 
     # Format it as FAT16 (5M)
-    sudo mkfs.vfat -F 16 /cheese.img
+    sudo mkfs.vfat -F 16 -n CHEESE /cheese.img
     # first mount / unmount
     sleep 0.3
     sudo mount -o loop /cheese.img /cheese
