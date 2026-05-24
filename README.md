@@ -1,4 +1,5 @@
 # Bash-aliases-with-stuff-I-added
+# after running "RUN_FIRST.sh" run "source ~/.bashrc" (or reboot)
 # comment out the parts of the script/aliases that you dont want!
 ## download by clicking "code" and then "download zip"
 # this is for stuff running on the handheld emulators like the R36S
